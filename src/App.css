@@ -1,5 +1,23 @@
-.appContainer{
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-    display: flex;
-    justify-content: center;
+.container {
+  width: 90%;
+  background-color: aquamarine;
+  display: grid;
+  grid-template-columns: repeat(Auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.container > div {
+  border: 1px solid #363636;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #242424;
 }
