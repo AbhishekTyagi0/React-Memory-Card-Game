@@ -1,8 +1,7 @@
-# React + Vite
+This project is Memory Game which fetches gif data and there unique ids to render on th e webpage.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+where if you click on the unique gif everytime the score will increase.
 
-Currently, two official plugins are available:
+However, if you click on the already clicked gif then the game will reset and start from 0.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+however, your previous score will remain intact so you can compare each time.
