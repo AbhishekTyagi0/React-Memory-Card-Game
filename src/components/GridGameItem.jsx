@@ -1,9 +1,16 @@
 import React from "react";
 
-const GridGameItem = ({ images, id }) => {
+const GridGameItem = ({ images, id, clickHandler }) => {
   return (
     <div>
-      <img src={images} alt="GIF" />
+      <img
+        id={id}
+        src={images}
+        alt="GIF"
+        onClick={(e) => {
+          clickHandler(e);
+        }}
+      />
     </div>
   );
 };

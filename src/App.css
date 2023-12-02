@@ -16,13 +16,6 @@
   gap: 10px;
 }
 
-@media (max-width: 400px) {
-  .container {
-    width: 100%;
-    margin-top: 1rem;
-  }
-}
-
 .container > div {
   border: 1px solid #363636;
   display: flex;
@@ -34,4 +27,30 @@
 img {
   width: 280px;
   height: 250px;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: right;
+  width: 80%;
+}
+
+.score > p {
+  font-size: 2rem;
+  margin: 0;
+}
+@media (max-width: 400px) {
+  .container {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .score {
+    width: 100%;
+  }
+  .score > p {
+    font-size: 1.2rem;
+    text-align: right;
+  }
 }

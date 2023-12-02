@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import GridGameItem from "./GridGameItem";
+import Score from "./Score";
 
 const GameBoard = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [score, setScore] = useState(0);
+  const [previousClick, setPreviousClick] = useState([]);
+  const [highScore, setHighScore] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,16 +43,35 @@ const GameBoard = () => {
     [shuffledData[i], shuffledData[j]] = [shuffledData[j], shuffledData[i]];
   }
 
+  const clickHandler = (e) => {
+    const clicked = e.target.id;
+    if (previousClick.includes(clicked)) {
+      setScore(0);
+      setPreviousClick([]);
+    } else {
+      setPreviousClick((previousClick) => [...previousClick, clicked]);
+      setScore((preScore) => preScore + 1);
+      const updateScore = score + 1;
+      if (updateScore > highScore) {
+        setHighScore(updateScore);
+      }
+    }
+  };
+
   return (
-    <div className="container">
-      {shuffledData.map((item) => (
-        <GridGameItem
-          key={item.gif.id}
-          id={item.gif.id}
-          images={item.gif.images.downsized.url}
-        />
-      ))}
-    </div>
+    <>
+      <Score score={score} highScore={highScore} />
+      <div className="container">
+        {shuffledData.map((item) => (
+          <GridGameItem
+            key={item.gif.id}
+            id={item.gif.id}
+            images={item.gif.images.downsized.url}
+            clickHandler={(e) => clickHandler(e)}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 
