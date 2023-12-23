@@ -52,10 +52,16 @@ img {
   font-size: 1.5rem;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 550px) {
   .container {
     width: 100%;
     margin-top: 1rem;
+  }
+
+  .instructions {
+    border-top: 1px solid #eee;
+    width: 100%;
+    padding: 0 2rem;
   }
   .score {
     width: 100%;
@@ -66,5 +72,19 @@ img {
   }
   .instructions > .inst > p {
     font-size: 0.5rem;
+  }
+
+  img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .container {
+    border-radius: 8px;
+    padding: 0.9rem;
+    background-color: aquamarine;
+    display: grid;
+    grid-template-columns: repeat(Auto-fit, minmax(130px, 1fr));
+    gap: 0.8rem;
   }
 }
